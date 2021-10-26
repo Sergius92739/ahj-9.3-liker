@@ -1,0 +1,63 @@
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+// size to one line
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// placeholder helper
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin btn {
+  border-radius: 7px;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease 0s;
+}
+@mixin btnBefore {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: inherit;
+  box-shadow: $b_sh-light;
+  transform: translate3d(0, 0.4em, -1em);
+  transition: transform 0.15s ease 0s, box-shadow 0.15s ease 0s;
+}
+@mixin btnHover {
+  transform: translate(0, .25em);
+}
+@mixin btnHoverBefore {
+  transform: translate3d(0, .25em, -1em);
+}
+@mixin btnActive {
+  transform: translate(0, .4em);
+}
+@mixin btnActiveBefore {
+  transform: translate3d(0, 0, -1em);
+}

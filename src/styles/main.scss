@@ -1,0 +1,174 @@
+@import "vars.scss";
+@import "mixins.scss";
+@import "null.scss";
+
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: $neutral-lightex;
+  font-size: 1.3rem;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.liker__btn {
+  padding: 15px 70px;
+  background-color: red;
+  font-size: 1.5rem;
+  color: white;
+  border: 1px solid #000;
+  @include btn();
+  &::before {
+    background-color: rgb(54, 54, 54);
+    @include btnBefore();
+  }
+  &:hover {
+    background-color: rgb(255, 66, 66);
+    @include btnHover();
+  }
+  &:hover::before {
+    @include btnHoverBefore();
+  }
+  &:active {
+    @include btnActive();
+  }
+  &:active::before {
+    @include btnActiveBefore();
+  }
+}
+
+.heart {
+  position: absolute;
+  left: 75px;
+  bottom: 0;
+  &.left {
+    animation: left 500ms ease-out 0s 1 normal forwards;
+  }
+  &.right {
+    animation: right 500ms ease-out 0s 1 normal forwards;
+  }
+  &.center_right {
+    animation: center_right 500ms ease-out 0s 1 normal forwards;
+  }
+  &.center_left {
+    animation: center_left 500ms ease-out 0s 1 normal forwards;
+  }
+}
+
+@keyframes center_left {
+  0% {
+    left: 75px;
+    bottom: 0;
+    opacity: 1;
+  }
+  25% {
+    left: 75px;
+    bottom: 0;
+    opacity: 1;
+  }
+  50% {
+    left: 25px;
+    bottom: 50px;
+    opacity: 0.75;
+  }
+  75% {
+    left: 125px;
+    bottom: 150px;
+    opacity: 0.5;
+  }
+  100% {
+    left: 25px;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes center_right {
+  0% {
+    left: 75px;
+    bottom: 0;
+    opacity: 1;
+  }
+  25% {
+    left: 75px;
+    bottom: 0;
+    opacity: 1;
+  }
+  50% {
+    left: 125px;
+    bottom: 50px;
+    opacity: 0.75;
+  }
+  75% {
+    left: 25px;
+    bottom: 150px;
+    opacity: 0.5;
+  }
+  100% {
+    left: 125px;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes right {
+  0% {
+    left: 75px;
+    bottom: 0;
+    opacity: 1;
+  }
+  25% {
+    left: 125px;
+    bottom: 50px;
+    opacity: 0.75;
+  }
+  50% {
+    left: 25px;
+    bottom: 100px;
+    opacity: 0.5;
+  }
+  75% {
+    left: 125px;
+    bottom: 150px;
+    opacity: 0.25;
+  }
+  100% {
+    left: 0;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes left {
+  0% {
+    left: 75px;
+    bottom: 0;
+    opacity: 1;
+  }
+  25% {
+    left: 25px;
+    bottom: 50px;
+    opacity: 0.75;
+  }
+  50% {
+    left: 125px;
+    bottom: 100px;
+    opacity: 0.5;
+  }
+  75% {
+    left: 25px;
+    bottom: 150px;
+    opacity: 0.25;
+  }
+  100% {
+    left: 125px;
+    bottom: 200px;
+    opacity: 0;
+  }
+}
