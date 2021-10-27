@@ -11,7 +11,7 @@ export default class Liker {
   }
 
   static get markUp() {
-    return '<img class="heart" src="./images/heart.png">';
+    return '<div class="heart"></div>';
   }
 
   init() {
