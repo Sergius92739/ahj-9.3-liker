@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/6m9b437splgmk846/branch/master?svg=true)](https://ci.appveyor.com/project/Sergius92739/ahj-9-3-liker/branch/master)
 
-#### Deployment: 
+#### Deployment: <a href="https://sergius92739.github.io/ahj-9.3-liker/">Github Pages</a>
 
 ---
 
